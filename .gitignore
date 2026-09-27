@@ -1,0 +1,13 @@
+# Sistema e editor
+.DS_Store
+.vscode/
+.idea/
+
+# Dependências e arquivos temporários
+node_modules/
+.vercel/
+*.log
+
+# Configurações locais e segredos
+.env
+.env.local
