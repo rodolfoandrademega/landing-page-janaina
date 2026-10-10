@@ -1,69 +1,114 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import { ArrowUpRight, Camera, MapPin, MessageCircle, Share2, Sparkles } from "lucide-react";
+import { bioData } from "@/data/bioData";
+import styles from "./bio.module.css";
 
 export default function Home() {
+  const [shareStatus, setShareStatus] = useState("");
+
+  async function handleShare() {
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: bioData.name, url: window.location.href });
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        setShareStatus("Link copiado!");
+      }
+    } catch (error) {
+      if (!(error instanceof DOMException && error.name === "AbortError")) {
+        setShareStatus("Copie o endereço da página para compartilhar.");
+      }
+    }
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className={styles.page}>
+      <div className={styles.profile}>
+        <div className={styles.photo}>
+          <Image
+            src={bioData.coverUrl}
+            alt="Janaína Andrade"
+            fill
+            sizes="(max-width: 520px) 100vw, 480px"
+            preload
+            className={styles.portrait}
+          />
+          <div className={styles.photoFade} />
+          <button className={styles.share} onClick={handleShare} aria-label="Compartilhar página">
+            <Share2 size={17} />
+          </button>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className={styles.content}>
+          <div className={styles.logo}>
+            <Image src={bioData.logoUrl} alt="Logo de Janaína Andrade" width={58} height={55} />
+          </div>
+          <header className={styles.intro}>
+            <p className={styles.role}>{bioData.role}</p>
+            <h1>{bioData.name}</h1>
+            <p className={styles.bio}>{bioData.bio}</p>
+          </header>
+
+          <nav className={styles.links} aria-label="Links de Janaína Andrade">
+            <a className={styles.featured} href={bioData.featuredLink.url} target="_blank" rel="noopener noreferrer">
+              <span className={styles.featuredPhoto} aria-hidden="true">
+                <Image src={bioData.coverUrl} alt="" fill sizes="180px" />
+              </span>
+              <span className={styles.featuredCopy}>
+                <span className={styles.cardEyebrow}><MessageCircle size={12} /> SEU MOMENTO DE CUIDADO</span>
+                <strong>Vamos agendar<br />seu atendimento?</strong>
+                <small>Fale comigo pelo WhatsApp</small>
+              </span>
+              <span className={styles.roundArrow}><ArrowUpRight size={19} /></span>
+            </a>
+
+            <a className={styles.procedures} href={bioData.links[0].url} target="_blank" rel="noopener noreferrer">
+              <span className={styles.procedurePhoto}>
+                <Image src="/images/cuidado-facial.jpg" alt="" fill sizes="110px" />
+                <span><Sparkles size={15} /></span>
+              </span>
+              <span className={styles.procedureCopy}>
+                <span className={styles.cardEyebrow}>ENCONTRE SEU CUIDADO</span>
+                <strong>Conheça os<br />procedimentos</strong>
+                <small>Protocolos e valores</small>
+              </span>
+              <span className={styles.outlineArrow}><ArrowUpRight size={18} /></span>
+            </a>
+
+            <a className={styles.instagram} href={bioData.links[1].url} target="_blank" rel="noopener noreferrer">
+              <span className={styles.socialPhoto} aria-hidden="true">
+                <Image src={bioData.coverUrl} alt="" fill sizes="100px" />
+              </span>
+              <span className={styles.cardEyebrow}><Camera size={14} /> MAIS DE MIM</span>
+              <span className={styles.socialCopy}>
+                <strong>Meu universo<br />no Instagram</strong>
+                <small>Dicas e novidades</small>
+              </span>
+              <ArrowUpRight size={18} className={styles.cornerArrow} />
+            </a>
+
+            <a className={styles.location} href={bioData.links[2].url} target="_blank" rel="noopener noreferrer">
+              <span className={styles.locationArt} aria-hidden="true">
+                <span className={styles.mapLine} />
+                <span className={styles.mapPin}><Image src={bioData.logoUrl} alt="" width={20} height={20} /></span>
+              </span>
+              <span className={styles.cardEyebrow}><MapPin size={14} /> NOSSO ENCONTRO</span>
+              <span className={styles.locationCopy}>
+                <strong>Como<br />chegar</strong>
+                <small>Peça a localização</small>
+              </span>
+              <ArrowUpRight size={18} className={styles.cornerArrow} />
+            </a>
+          </nav>
+          <p className={styles.status} role="status">{shareStatus}</p>
+          <footer className={styles.footer}>
+            <span>BELEZA COM CUIDADO. CUIDADO COM VOCÊ.</span>
+          </footer>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
