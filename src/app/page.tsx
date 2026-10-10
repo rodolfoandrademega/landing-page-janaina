@@ -57,7 +57,7 @@ export default function Home() {
           <nav className={styles.links} aria-label="Links de Janaína Andrade">
             <a className={styles.featured} href={bioData.featuredLink.url} target="_blank" rel="noopener noreferrer">
               <span className={styles.featuredPhoto} aria-hidden="true">
-                <Image src={bioData.coverUrl} alt="" fill sizes="180px" />
+                <Image src="/images/janaina-white.jpg" alt="" fill sizes="180px" />
               </span>
               <span className={styles.featuredCopy}>
                 <span className={styles.cardEyebrow}><MessageCircle size={12} /> SEU MOMENTO DE CUIDADO</span>
@@ -69,7 +69,7 @@ export default function Home() {
 
             <a className={styles.procedures} href={bioData.links[0].url} target="_blank" rel="noopener noreferrer">
               <span className={styles.procedurePhoto}>
-                <Image src={bioData.coverUrl} alt="" fill sizes="110px" />
+                <Image src="/images/janaina-treatment.jpg" alt="" fill sizes="110px" />
                 <span><Sparkles size={15} /></span>
               </span>
               <span className={styles.procedureCopy}>
@@ -82,7 +82,7 @@ export default function Home() {
 
             <a className={styles.instagram} href={bioData.links[1].url} target="_blank" rel="noopener noreferrer">
               <span className={styles.socialPhoto} aria-hidden="true">
-                <Image src={bioData.coverUrl} alt="" fill sizes="100px" />
+                <Image src="/images/janaina-smile.jpg" alt="" fill sizes="100px" />
               </span>
               <span className={styles.cardEyebrow}><Camera size={14} /> MAIS DE MIM</span>
               <span className={styles.socialCopy}>
@@ -107,7 +107,7 @@ export default function Home() {
 
             <a className={styles.rennove} href={bioData.rennove.url} target="_blank" rel="noopener noreferrer">
               <span className={styles.rennoveArt} aria-hidden="true">
-                <Image src={bioData.coverUrl} alt="" fill sizes="90px" />
+                <Image src="/images/janaina-consult.jpg" alt="" fill sizes="90px" />
               </span>
               <span className={styles.rennoveCopy}>
                 <span className={styles.cardEyebrow}>UM ESPAÇO PARA VOCÊ</span>
