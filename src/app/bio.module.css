@@ -418,3 +418,36 @@
   .instagram, .location { padding-left: 14px; }
   .socialPhoto { right: 7px; }
 }
+
+.rennove {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-height: 112px;
+  padding: 20px 18px;
+  border: 1px solid #d8d5c3;
+  border-radius: 20px 5px 20px 20px;
+  background: linear-gradient(115deg, #f0eee2, #e8e5d7);
+}
+.rennoveArt {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 66px;
+  flex-shrink: 0;
+  color: #776d45;
+  border: 1px solid #c8c4ad;
+  border-radius: 28px 28px 5px 5px;
+  background: #faf9ef8c;
+}
+.rennoveCopy { flex: 1; min-width: 0; }
+.rennoveCopy .cardEyebrow { font-size: 6px; color: #776d45; letter-spacing: 1.3px; margin-bottom: 8px; }
+.rennoveCopy strong { font-size: 23px; }
+.rennoveCopy small { font-size: 9px; color: #77705b; margin-top: 6px; }
+.rennove .outlineArrow { align-self: center; margin: 0; }
+@media (max-width: 370px) {
+  .rennove { gap: 12px; padding: 18px 14px; }
+  .rennoveArt { width: 43px; }
+  .rennoveCopy strong { font-size: 21px; }
+}

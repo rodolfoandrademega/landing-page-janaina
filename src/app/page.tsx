@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Camera, MapPin, MessageCircle, Share2, Sparkles } from "lucide-react";
+import { ArrowUpRight, Camera, MapPin, MessageCircle, Share2, Sparkles, Leaf } from "lucide-react";
 import { bioData } from "@/data/bioData";
 import styles from "./bio.module.css";
 import { LocationModal } from "@/components/LocationModal";
@@ -104,6 +104,16 @@ export default function Home() {
               </span>
               <ArrowUpRight size={18} className={styles.cornerArrow} />
             </button>
+
+            <a className={styles.rennove} href={bioData.rennove.url} target="_blank" rel="noopener noreferrer">
+              <span className={styles.rennoveArt} aria-hidden="true"><Leaf size={32} strokeWidth={1} /></span>
+              <span className={styles.rennoveCopy}>
+                <span className={styles.cardEyebrow}>UM ESPAÇO PARA VOCÊ</span>
+                <strong>{bioData.rennove.title}</strong>
+                <small>{bioData.rennove.subtitle}</small>
+              </span>
+              <span className={styles.outlineArrow}><ArrowUpRight size={18} /></span>
+            </a>
           </nav>
           <p className={styles.status} role="status">{shareStatus}</p>
           <footer className={styles.footer}>
