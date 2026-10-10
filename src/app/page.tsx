@@ -120,6 +120,9 @@ export default function Home() {
           <p className={styles.status} role="status">{shareStatus}</p>
           <footer className={styles.footer}>
             <span>BELEZA COM CUIDADO. CUIDADO COM VOCÊ.</span>
+            <a className={styles.credit} href="https://megaagencia.com.br" target="_blank" rel="noopener noreferrer">
+              Desenvolvido por <strong>Mega Agência</strong>
+            </a>
           </footer>
         </div>
       </div>
