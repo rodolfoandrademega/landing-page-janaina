@@ -5,9 +5,11 @@ import Image from "next/image";
 import { ArrowUpRight, Camera, MapPin, MessageCircle, Share2, Sparkles } from "lucide-react";
 import { bioData } from "@/data/bioData";
 import styles from "./bio.module.css";
+import { LocationModal } from "@/components/LocationModal";
 
 export default function Home() {
   const [shareStatus, setShareStatus] = useState("");
+  const [locationOpen, setLocationOpen] = useState(false);
 
   async function handleShare() {
     try {
@@ -90,7 +92,7 @@ export default function Home() {
               <ArrowUpRight size={18} className={styles.cornerArrow} />
             </a>
 
-            <a className={styles.location} href={bioData.links[2].url} target="_blank" rel="noopener noreferrer">
+            <button type="button" className={styles.location} onClick={() => setLocationOpen(true)} aria-haspopup="dialog">
               <span className={styles.locationArt} aria-hidden="true">
                 <span className={styles.mapLine} />
                 <span className={styles.mapPin}><Image src={bioData.logoUrl} alt="" width={20} height={20} /></span>
@@ -98,10 +100,10 @@ export default function Home() {
               <span className={styles.cardEyebrow}><MapPin size={14} /> NOSSO ENCONTRO</span>
               <span className={styles.locationCopy}>
                 <strong>Como<br />chegar</strong>
-                <small>Peça a localização</small>
+                <small>Veja o mapa e sua rota</small>
               </span>
               <ArrowUpRight size={18} className={styles.cornerArrow} />
-            </a>
+            </button>
           </nav>
           <p className={styles.status} role="status">{shareStatus}</p>
           <footer className={styles.footer}>
@@ -109,6 +111,7 @@ export default function Home() {
           </footer>
         </div>
       </div>
+      <LocationModal open={locationOpen} onClose={() => setLocationOpen(false)} />
     </main>
   );
 }

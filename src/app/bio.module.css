@@ -92,19 +92,22 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
-.links a {
+.links :is(a, button) {
   position: relative;
   overflow: hidden;
   text-decoration: none;
   color: var(--ink);
   transition: transform .25s, box-shadow .25s;
   isolation: isolate;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
-.links a:hover {
+.links :is(a, button):hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px #45463015;
 }
-.links a:active {
+.links :is(a, button):active {
   transform: scale(.985);
 }
 .links strong {
@@ -397,10 +400,10 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .links a, .procedurePhoto img {
+  .links :is(a, button), .procedurePhoto img {
     transition: none;
   }
-  .links a:hover, .links a:active, .procedures:hover img {
+  .links :is(a, button):hover, .links :is(a, button):active, .procedures:hover img {
     transform: none;
   }
 }

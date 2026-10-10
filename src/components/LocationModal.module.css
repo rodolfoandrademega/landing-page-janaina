@@ -1,0 +1,63 @@
+.dialog {
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100svh - 40px);
+  padding: 0;
+  border: 1px solid #dddccd;
+  border-radius: 22px;
+  background: #f8f7f2;
+  color: #38382f;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin: auto;
+  box-shadow: 0 24px 90px #20241540;
+}
+.dialog::backdrop { background: #262a236b; backdrop-filter: blur(5px); }
+.dialog button, .dialog a, .dialog input { -webkit-tap-highlight-color: transparent; }
+.dialog button { cursor: pointer; }
+.dialog :focus-visible { outline: 2px solid #625a36; outline-offset: 3px; }
+.header { position: sticky; top: 0; z-index: 2; background: #f8f7f2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 23px 24px 20px; }
+.header p { font-size: 8px; letter-spacing: 1.8px; color: #625a36; margin: 0 0 8px; }
+.header h2 { font-family: Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.15; letter-spacing: -.7px; margin: 0; }
+.close, .copy { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border: 1px solid #e0dfd3; border-radius: 50%; background: #eeede5; color: #625a36; }
+.map { height: 210px; position: relative; background: #e4e7da; border-top: 1px solid #e0dfd3; border-bottom: 1px solid #e0dfd3; }
+.map iframe { border: 0; width: 100%; height: 100%; }
+.map a { position: absolute; right: 12px; bottom: 12px; display: flex; align-items: center; gap: 6px; background: #fffffff2; box-shadow: 0 2px 8px #0002; color: #38382f; padding: 8px 10px; border-radius: 6px; font-size: 10px; text-decoration: none; }
+.body { padding: 22px 24px 24px; }
+.destination { display: flex; align-items: flex-start; gap: 13px; }
+.destinationIcon { display: grid; place-items: center; width: 38px; height: 38px; background: #e9ecdf; border-radius: 12px; color: #625a36; flex-shrink: 0; }
+.destination > div { flex: 1; }
+.destination div > span { display: block; font-size: 7px; letter-spacing: 1.3px; color: #737467; margin-bottom: 4px; }
+.destination h3 { font-size: 14px; font-weight: 500; margin: 0 0 5px; }
+.destination address { font-style: normal; font-size: 11px; line-height: 1.8; color: #696b5d; }
+.copy { width: 32px; height: 32px; background: transparent; }
+.route { border-top: 1px solid #e0dfd3; margin-top: 21px; padding-top: 20px; }
+.route > h3 { font-family: Georgia, serif; font-weight: 400; font-size: 22px; margin: 0 0 15px; }
+.locate { width: 100%; border: 1px solid #b9bea7; padding: 13px 12px; border-radius: 10px; background: #e9ecdf; color: #535e40; font-size: 12px; display: flex; align-items: center; justify-content: center; gap: 9px; }
+.locate:hover { background: #e0e5d3; }
+.locate:disabled { cursor: wait; opacity: .7; }
+.route > label { display: block; font-size: 10px; color: #696b5d; margin: 17px 0 7px; }
+.originInput { display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid #d8d9cb; border-radius: 8px; background: #fff; color: #737467; }
+.originInput input { width: 100%; min-width: 0; padding: 12px 0; border: none; background: transparent; color: #38382f; font-size: 12px; }
+.originInput input:focus-visible { outline-offset: 1px; }
+.originInput > svg { flex-shrink: 0; }
+.originInput button { border: 0; background: transparent; color: #737467; display: grid; place-items: center; padding: 5px; }
+.modes { border: 0; padding: 0; margin: 17px 0 19px; display: flex; flex-wrap: wrap; gap: 7px; }
+.modes legend { font-size: 10px; color: #696b5d; margin-bottom: 9px; }
+.modes label { position: relative; display: flex; cursor: pointer; }
+.modes input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.modes span { border: 1px solid #dddccd; color: #696b5d; font-size: 10px; padding: 8px 12px; border-radius: 20px; }
+.modes input:checked + span { color: #fffdf0; background: #625a36; border-color: #625a36; }
+.modes input:focus-visible + span { outline: 2px solid #625a36; outline-offset: 3px; }
+.routeButton { display: flex; align-items: center; justify-content: center; gap: 10px; background: #625a36; color: #fffdf0; font-size: 12px; text-decoration: none; padding: 15px 12px; border-radius: 11px; }
+.routeButton:hover { background: #514a2a; }
+.routeButton svg:last-child { margin-left: auto; }
+.help { font-size: 10px; line-height: 1.8; color: #696b5d; margin: 11px 0 0; }
+.privacy { font-size: 9px; line-height: 1.7; color: #737467; margin: 9px 0 0; }
+.status { font-size: 10px; line-height: 1.8; color: #535e40; margin: 9px 0 0; }
+@media (max-width: 520px) {
+  .dialog { width: calc(100vw - 24px); max-height: calc(100svh - 24px); border-radius: 18px; }
+  .header { padding: 20px; }
+  .header h2 { font-size: 26px; }
+  .body { padding: 20px; }
+  .map { height: 185px; }
+}
