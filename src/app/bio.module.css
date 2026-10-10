@@ -215,7 +215,7 @@
 }
 .procedurePhoto img {
   object-fit: cover;
-  object-position: 60% center;
+  object-position: center 30%;
   transition: transform .4s;
 }
 .procedures:hover img {
@@ -431,16 +431,17 @@
   background: linear-gradient(115deg, #f0eee2, #e8e5d7);
 }
 .rennoveArt {
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 66px;
+  position: relative;
+  overflow: hidden;
+  width: 76px;
+  height: 88px;
   flex-shrink: 0;
   color: #776d45;
   border: 1px solid #c8c4ad;
   border-radius: 28px 28px 5px 5px;
   background: #faf9ef8c;
 }
+.rennoveArt img { object-fit: cover; object-position: center 30%; }
 .rennoveCopy { flex: 1; min-width: 0; }
 .rennoveCopy .cardEyebrow { font-size: 6px; color: #776d45; letter-spacing: 1.3px; margin-bottom: 8px; }
 .rennoveCopy strong { font-size: 23px; }
@@ -448,6 +449,6 @@
 .rennove .outlineArrow { align-self: center; margin: 0; }
 @media (max-width: 370px) {
   .rennove { gap: 12px; padding: 18px 14px; }
-  .rennoveArt { width: 43px; }
+  .rennoveArt { width: 62px; height: 82px; }
   .rennoveCopy strong { font-size: 21px; }
 }

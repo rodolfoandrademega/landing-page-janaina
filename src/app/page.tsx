@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Camera, MapPin, MessageCircle, Share2, Sparkles, Leaf } from "lucide-react";
+import { ArrowUpRight, Camera, MapPin, MessageCircle, Share2, Sparkles } from "lucide-react";
 import { bioData } from "@/data/bioData";
 import styles from "./bio.module.css";
 import { LocationModal } from "@/components/LocationModal";
@@ -69,7 +69,7 @@ export default function Home() {
 
             <a className={styles.procedures} href={bioData.links[0].url} target="_blank" rel="noopener noreferrer">
               <span className={styles.procedurePhoto}>
-                <Image src="/images/cuidado-facial.jpg" alt="" fill sizes="110px" />
+                <Image src={bioData.coverUrl} alt="" fill sizes="110px" />
                 <span><Sparkles size={15} /></span>
               </span>
               <span className={styles.procedureCopy}>
@@ -106,7 +106,9 @@ export default function Home() {
             </button>
 
             <a className={styles.rennove} href={bioData.rennove.url} target="_blank" rel="noopener noreferrer">
-              <span className={styles.rennoveArt} aria-hidden="true"><Leaf size={32} strokeWidth={1} /></span>
+              <span className={styles.rennoveArt} aria-hidden="true">
+                <Image src={bioData.coverUrl} alt="" fill sizes="90px" />
+              </span>
               <span className={styles.rennoveCopy}>
                 <span className={styles.cardEyebrow}>UM ESPAÇO PARA VOCÊ</span>
                 <strong>{bioData.rennove.title}</strong>
