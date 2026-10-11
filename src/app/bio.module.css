@@ -53,22 +53,22 @@
 }
 .role {
   color: var(--olive);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0 0 9px;
 }
 .intro h1 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 33px;
-  font-weight: 400;
-  letter-spacing: -1px;
+  font-family: var(--font-editorial), Georgia, serif;
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: -.8px;
   line-height: 1.2;
   margin: 0;
 }
 .bio {
   margin: 10px 0 0;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -97,10 +97,10 @@
 }
 .links strong {
   display: block;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-editorial), Georgia, serif;
   font-size: 24px;
-  font-weight: 400;
-  line-height: 1.12;
+  font-weight: 500;
+  line-height: 1.2;
   letter-spacing: -.6px;
 }
 .links small {
@@ -113,9 +113,9 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: 1.4px;
+  letter-spacing: 1px;
   margin-bottom: 13px;
   position: relative;
 }
@@ -154,16 +154,16 @@
 }
 .featured .cardEyebrow {
   color: #ede9ce;
-  font-size: 6px;
+  font-size: 8px;
   letter-spacing: 1.2px;
 }
 .featured strong {
-  font-size: 25px;
+  font-size: 24px;
   text-shadow: 0 1px 8px #3e392a40;
 }
 .featured small {
   color: #eee8cd;
-  font-size: 9px;
+  font-size: 10px;
 }
 .roundArrow, .outlineArrow {
   display: grid;
@@ -183,7 +183,7 @@
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   min-height: 130px;
   padding: 10px 15px 10px 10px;
   border: 1px solid #dedfd2;
@@ -192,7 +192,7 @@
 }
 .procedurePhoto {
   align-self: stretch;
-  width: 102px;
+  width: 92px;
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
@@ -206,33 +206,21 @@
 .procedures:hover img {
   transform: scale(1.05);
 }
-.procedurePhoto > span {
-  position: absolute;
-  bottom: 7px;
-  left: 7px;
-  color: #fff;
-  background: #ffffff30;
-  backdrop-filter: blur(5px);
-  width: 25px;
-  height: 25px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-}
 .procedureCopy {
   flex: 1;
+  min-width: 0;
 }
 .procedureCopy .cardEyebrow {
-  font-size: 6px;
+  font-size: 8px;
   margin-bottom: 8px;
   color: var(--olive);
 }
 .procedureCopy strong {
-  font-size: 23px;
+  font-size: 22px;
 }
 .procedureCopy small {
   color: #666d59;
-  font-size: 9px;
+  font-size: 10px;
   margin-top: 7px;
 }
 .outlineArrow {
@@ -253,7 +241,7 @@
 }
 .instagram .cardEyebrow {
   color: #7a6551;
-  font-size: 6px;
+  font-size: 8px;
   letter-spacing: 1px;
 }
 .socialPhoto {
@@ -279,13 +267,13 @@
   margin-top: 55px;
 }
 .socialCopy strong {
-  font-size: 22px;
+  font-size: 21px;
   max-width: 140px;
   text-shadow: 0 1px 7px #ebe2d6;
 }
 .socialCopy small {
   color: #746451;
-  font-size: 9px;
+  font-size: 10px;
 }
 .cornerArrow {
   position: absolute;
@@ -299,7 +287,7 @@
 }
 .location .cardEyebrow {
   color: #64704f;
-  font-size: 6px;
+  font-size: 8px;
   letter-spacing: 1px;
 }
 .locationArt {
@@ -339,11 +327,11 @@
   transform: rotate(43deg);
 }
 .locationCopy strong {
-  font-size: 25px;
+  font-size: 24px;
 }
 .locationCopy small {
   color: #657052;
-  font-size: 9px;
+  font-size: 10px;
 }
 .page :focus-visible {
   outline: 2px solid var(--olive);
@@ -354,7 +342,7 @@
   margin-top: 25px;
   padding-top: 19px;
   border-top: 1px solid #e5e4d9;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 1.5px;
   color: var(--muted);
 }
@@ -400,9 +388,10 @@
 @media (max-width: 370px) {
   .content { padding-left: 18px; padding-right: 18px; }
   .procedures { gap: 12px; }
-  .procedurePhoto { width: 83px; }
-  .procedureCopy strong { font-size: 21px; }
-  .socialCopy strong { font-size: 20px; }
+  .procedurePhoto { width: 70px; }
+  .procedureCopy strong { font-size: 19px; }
+  .socialCopy strong { font-size: 18px; }
+  .procedures .outlineArrow { width: 27px; height: 27px; }
   .cardEyebrow { letter-spacing: .8px; }
   .instagram, .location { padding-left: 14px; }
   .socialPhoto { right: 7px; }
@@ -432,9 +421,9 @@
 }
 .rennoveArt img { object-fit: cover; object-position: center 30%; }
 .rennoveCopy { flex: 1; min-width: 0; }
-.rennoveCopy .cardEyebrow { font-size: 6px; color: #776d45; letter-spacing: 1.3px; margin-bottom: 8px; }
-.rennoveCopy strong { font-size: 23px; }
-.rennoveCopy small { font-size: 9px; color: #77705b; margin-top: 6px; }
+.rennoveCopy .cardEyebrow { font-size: 8px; color: #776d45; letter-spacing: 1.3px; margin-bottom: 8px; }
+.rennoveCopy strong { font-size: 22px; }
+.rennoveCopy small { font-size: 10px; color: #77705b; margin-top: 6px; }
 .rennove .outlineArrow { align-self: center; margin: 0; }
 @media (max-width: 370px) {
   .rennove { gap: 12px; padding: 18px 14px; }

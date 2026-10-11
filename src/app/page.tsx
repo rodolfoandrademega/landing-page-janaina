@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Camera, MapPin, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { bioData } from "@/data/bioData";
 import styles from "./bio.module.css";
 import { LocationModal } from "@/components/LocationModal";
@@ -43,7 +43,7 @@ export default function Home() {
                 <Image src="/images/janaina-white.jpg" alt="" fill sizes="180px" />
               </span>
               <span className={styles.featuredCopy}>
-                <span className={styles.cardEyebrow}><MessageCircle size={12} /> SEU MOMENTO DE CUIDADO</span>
+                <span className={styles.cardEyebrow}>SEU MOMENTO DE CUIDADO</span>
                 <strong>Vamos agendar<br />seu atendimento?</strong>
                 <small>Fale comigo pelo WhatsApp</small>
               </span>
@@ -53,7 +53,6 @@ export default function Home() {
             <button type="button" className={styles.procedures} onClick={() => setProceduresOpen(true)} aria-haspopup="dialog">
               <span className={styles.procedurePhoto}>
                 <Image src="/images/janaina-treatment.jpg" alt="" fill sizes="110px" />
-                <span><Sparkles size={15} /></span>
               </span>
               <span className={styles.procedureCopy}>
                 <span className={styles.cardEyebrow}>ENCONTRE SEU CUIDADO</span>
@@ -67,7 +66,7 @@ export default function Home() {
               <span className={styles.socialPhoto} aria-hidden="true">
                 <Image src="/images/janaina-smile.jpg" alt="" fill sizes="100px" />
               </span>
-              <span className={styles.cardEyebrow}><Camera size={14} /> MAIS DE MIM</span>
+              <span className={styles.cardEyebrow}>MAIS DE MIM</span>
               <span className={styles.socialCopy}>
                 <strong>Meu universo<br />no Instagram</strong>
                 <small>Dicas e novidades</small>
@@ -80,7 +79,7 @@ export default function Home() {
                 <span className={styles.mapLine} />
                 <span className={styles.mapPin}><Image src={bioData.logoUrl} alt="" width={20} height={20} /></span>
               </span>
-              <span className={styles.cardEyebrow}><MapPin size={14} /> NOSSO ENCONTRO</span>
+              <span className={styles.cardEyebrow}>NOSSO ENCONTRO</span>
               <span className={styles.locationCopy}>
                 <strong>Como<br />chegar</strong>
                 <small>Veja o mapa e sua rota</small>

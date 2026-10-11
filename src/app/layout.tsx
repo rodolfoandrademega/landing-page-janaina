@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Lora } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const serif = Lora({ subsets: ["latin"], variable: "--font-editorial", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Janaína Andrade | Esteticista & Cosmetóloga",
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body 
-        className={`${inter.className} antialiased bg-[#fcfbf9] min-h-screen`}
+        className={`${sans.variable} ${serif.variable} antialiased bg-[#fcfbf9] min-h-screen`}
         suppressHydrationWarning
       >
         {children}

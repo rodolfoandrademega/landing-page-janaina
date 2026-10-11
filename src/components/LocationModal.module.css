@@ -17,7 +17,7 @@
 .dialog :focus-visible { outline: 2px solid #625a36; outline-offset: 3px; }
 .header { position: sticky; top: 0; z-index: 2; background: #f8f7f2; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 23px 24px 20px; }
 .header p { font-size: 8px; letter-spacing: 1.8px; color: #625a36; margin: 0 0 8px; }
-.header h2 { font-family: Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.15; letter-spacing: -.7px; margin: 0; }
+.header h2 { font-family: var(--font-editorial), Georgia, serif; font-weight: 500; font-size: 28px; line-height: 1.15; letter-spacing: -.7px; margin: 0; }
 .close, .copy { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border: 1px solid #e0dfd3; border-radius: 50%; background: #eeede5; color: #625a36; }
 .map { height: 210px; position: relative; background: #e4e7da; border-top: 1px solid #e0dfd3; border-bottom: 1px solid #e0dfd3; }
 .map iframe { border: 0; width: 100%; height: 100%; }
@@ -31,7 +31,7 @@
 .destination address { font-style: normal; font-size: 11px; line-height: 1.8; color: #696b5d; }
 .copy { width: 32px; height: 32px; background: transparent; }
 .route { border-top: 1px solid #e0dfd3; margin-top: 21px; padding-top: 20px; }
-.route > h3 { font-family: Georgia, serif; font-weight: 400; font-size: 22px; margin: 0 0 15px; }
+.route > h3 { font-family: var(--font-editorial), Georgia, serif; font-weight: 500; font-size: 22px; margin: 0 0 15px; }
 .locate { width: 100%; border: 1px solid #b9bea7; padding: 13px 12px; border-radius: 10px; background: #e9ecdf; color: #535e40; font-size: 12px; display: flex; align-items: center; justify-content: center; gap: 9px; }
 .locate:hover { background: #e0e5d3; }
 .locate:disabled { cursor: wait; opacity: .7; }

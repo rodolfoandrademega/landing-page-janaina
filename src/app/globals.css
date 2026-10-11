@@ -7,6 +7,6 @@
 body {
   background-color: #fcfbf9 !important; /* Bege clarinho / Creme suave */
   color: #2d2b2a !important;            /* Texto escuro delicado */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
   overflow-x: hidden;
 }

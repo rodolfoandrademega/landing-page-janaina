@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { ArrowUpRight, MessageCircle, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import { procedures, procedureContactUrl } from "@/data/procedures";
 import styles from "./ProceduresModal.module.css";
 
@@ -37,7 +37,7 @@ export function ProceduresModal({ open, onClose }: { open: boolean; onClose: () 
       }}
     >
       <header className={styles.header}>
-        <div><p><Sparkles size={12} /> SEU MOMENTO DE CUIDADO</p><h2 id="procedures-title">Conheça os procedimentos</h2></div>
+        <div><p>SEU MOMENTO DE CUIDADO</p><h2 id="procedures-title">Conheça os procedimentos</h2></div>
         <button type="button" className={styles.close} onClick={onClose} aria-label="Fechar procedimentos" autoFocus><X size={20} /></button>
       </header>
       {open && <div className={styles.body}>
@@ -55,7 +55,7 @@ export function ProceduresModal({ open, onClose }: { open: boolean; onClose: () 
                 <h3>{procedure.name}</h3>
                 <p>{procedure.description}</p>
                 <a href={procedureContactUrl(procedure.name)} target="_blank" rel="noopener noreferrer" aria-label={`Saber mais sobre ${procedure.name} pelo WhatsApp`}>
-                  <MessageCircle size={15} /> Quero saber mais <ArrowUpRight size={17} />
+                  Quero saber mais <ArrowUpRight size={17} />
                 </a>
               </div>
             </article>
