@@ -33,21 +33,6 @@
   inset: 0;
   background: linear-gradient(to bottom, transparent 60%, var(--cream) 100%);
 }
-.share {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 39px;
-  height: 39px;
-  display: grid;
-  place-items: center;
-  color: var(--ink);
-  background: #f8f7f2c9;
-  border: 1px solid #ffffff8a;
-  border-radius: 50%;
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
 .content {
   position: relative;
   margin-top: -28px;
@@ -363,15 +348,6 @@
 .page :focus-visible {
   outline: 2px solid var(--olive);
   outline-offset: 4px;
-}
-.status {
-  color: var(--muted);
-  font-size: 11px;
-  text-align: center;
-  margin: 14px 0 0;
-}
-.status:empty {
-  display: none;
 }
 .footer {
   text-align: center;

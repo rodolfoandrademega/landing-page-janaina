@@ -2,29 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Camera, MapPin, MessageCircle, Share2, Sparkles } from "lucide-react";
+import { ArrowUpRight, Camera, MapPin, MessageCircle, Sparkles } from "lucide-react";
 import { bioData } from "@/data/bioData";
 import styles from "./bio.module.css";
 import { LocationModal } from "@/components/LocationModal";
 
 export default function Home() {
-  const [shareStatus, setShareStatus] = useState("");
   const [locationOpen, setLocationOpen] = useState(false);
-
-  async function handleShare() {
-    try {
-      if (navigator.share) {
-        await navigator.share({ title: bioData.name, url: window.location.href });
-      } else {
-        await navigator.clipboard.writeText(window.location.href);
-        setShareStatus("Link copiado!");
-      }
-    } catch (error) {
-      if (!(error instanceof DOMException && error.name === "AbortError")) {
-        setShareStatus("Copie o endereço da página para compartilhar.");
-      }
-    }
-  }
 
   return (
     <main className={styles.page}>
@@ -39,9 +23,6 @@ export default function Home() {
             className={styles.portrait}
           />
           <div className={styles.photoFade} />
-          <button className={styles.share} onClick={handleShare} aria-label="Compartilhar página">
-            <Share2 size={17} />
-          </button>
         </div>
 
         <div className={styles.content}>
@@ -117,7 +98,6 @@ export default function Home() {
               <span className={styles.outlineArrow}><ArrowUpRight size={18} /></span>
             </a>
           </nav>
-          <p className={styles.status} role="status">{shareStatus}</p>
           <footer className={styles.footer}>
             <span>BELEZA COM CUIDADO. CUIDADO COM VOCÊ.</span>
             <a className={styles.credit} href="https://megaagencia.com.br" target="_blank" rel="noopener noreferrer">
