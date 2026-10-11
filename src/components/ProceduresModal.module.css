@@ -1,0 +1,29 @@
+.dialog { width: min(720px, calc(100vw - 32px)); max-height: calc(100svh - 40px); margin: auto; padding: 0; overflow-y: auto; overscroll-behavior: contain; border: 1px solid #dddccd; border-radius: 24px; background: #f8f7f2; color: #38382f; box-shadow: 0 24px 90px #20241540; }
+.dialog::backdrop { background: #262a237a; backdrop-filter: blur(6px); }
+.dialog :focus-visible { outline: 2px solid #625a36; outline-offset: 4px; }
+.header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px; background: #f8f7f2; border-bottom: 1px solid #e5e4d9; }
+.header p { display: flex; align-items: center; gap: 7px; margin: 0 0 9px; color: #625a36; font-size: 8px; letter-spacing: 1.5px; }
+.header h2 { font: 400 30px/1.1 Georgia, serif; letter-spacing: -.8px; margin: 0; }
+.close { display: grid; place-items: center; width: 38px; height: 38px; flex-shrink: 0; border: 1px solid #dddece; border-radius: 50%; background: #eeede5; color: #625a36; cursor: pointer; }
+.body { padding: 0 24px 24px; }
+.intro { font-size: 12px; line-height: 1.8; color: #777769; margin: 20px 0; max-width: 510px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.card { display: flex; flex-direction: column; border: 1px solid #e0ded0; border-radius: 18px 18px 5px 18px; overflow: hidden; background: #fffef9; }
+.photo { position: relative; height: 180px; background: #e3e4db; overflow: hidden; }
+.photo img { object-fit: cover; object-position: center 55%; }
+.card:nth-child(3) .photo img { object-position: center 80%; }
+.photo::after { content: ''; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, #24291b70); }
+.number { position: absolute; top: 12px; left: 12px; z-index: 1; display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid #fff8; border-radius: 50%; background: #fffdf0dc; color: #625a36; font-size: 10px; }
+.imageLabel { position: absolute; bottom: 10px; right: 12px; z-index: 1; font-size: 6px; letter-spacing: 1.2px; color: #fff; }
+.copy { display: flex; flex-direction: column; flex: 1; padding: 20px; }
+.eyebrow { font-size: 7px; letter-spacing: 1.5px; color: #7b785e; }
+.copy h3, .help h3 { font: 400 25px/1.1 Georgia, serif; letter-spacing: -.5px; margin: 10px 0; }
+.copy p, .help p { font-size: 11px; line-height: 1.7; color: #747465; margin: 0 0 18px; }
+.copy a { display: flex; align-items: center; gap: 8px; margin-top: auto; padding: 12px; border-radius: 10px; background: #625a36; color: #fffdf0; font-size: 11px; text-decoration: none; }
+.copy a svg:last-child { margin-left: auto; }
+.copy a:hover { background: #514a2a; }
+.help { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 28px; border: 1px solid #d7dbc9; border-radius: 18px 5px 18px 18px; background: #e9ecdf; }
+.help img { object-fit: contain; margin-bottom: 12px; }
+.help h3 { max-width: 230px; font-size: 29px; }
+.help a { display: flex; align-items: center; gap: 12px; color: #625a36; font-size: 11px; text-decoration: none; border-bottom: 1px solid #b8bea4; padding: 8px 0; }
+@media (max-width: 600px) { .dialog { width: calc(100vw - 24px); max-height: calc(100svh - 24px); border-radius: 20px; } .header { padding: 20px; } .header h2 { font-size: 26px; } .body { padding: 0 20px 20px; } .grid { grid-template-columns: 1fr; gap: 16px; } .photo { height: 175px; } .copy { padding: 18px; } .help { padding: 24px; } }
