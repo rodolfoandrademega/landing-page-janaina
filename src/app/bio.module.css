@@ -409,6 +409,23 @@
   background: linear-gradient(115deg, #f0eee2, #e8e5d7);
 }
 .links .rennove:disabled { cursor: default; opacity: 1; }
+.rennove:disabled .rennoveArt,
+.rennove:disabled .rennoveCopy > .cardEyebrow,
+.rennove:disabled .rennoveCopy > strong {
+  filter: blur(2px);
+  opacity: .55;
+  user-select: none;
+}
+.rennove:disabled .rennoveCopy > small {
+  display: inline-block;
+  padding: 5px 9px;
+  margin-top: 10px;
+  border: 1px solid #d3cfbb;
+  border-radius: 6px;
+  background: #f8f7f2;
+  color: #625a36;
+  font-weight: 500;
+}
 .rennoveArt {
   position: relative;
   overflow: hidden;
