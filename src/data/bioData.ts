@@ -15,8 +15,7 @@ export const bioData = {
   },
   rennove: {
     title: "Conheça a Rennove",
-    subtitle: "Um espaço para cuidar de você",
-    url: `${whatsapp}?text=${encodeURIComponent("Olá, Janaína! Gostaria de conhecer mais sobre a Rennove.")}`,
+    subtitle: "Site em desenvolvimento",
   },
   featuredLink: {
     title: "Agendar meu atendimento",

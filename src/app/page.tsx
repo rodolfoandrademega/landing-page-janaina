@@ -87,7 +87,7 @@ export default function Home() {
               <ArrowUpRight size={18} className={styles.cornerArrow} />
             </button>
 
-            <a className={styles.rennove} href={bioData.rennove.url} target="_blank" rel="noopener noreferrer">
+            <button type="button" className={styles.rennove} disabled>
               <span className={styles.rennoveArt} aria-hidden="true">
                 <Image src="/images/janaina-consult.jpg" alt="" fill sizes="90px" />
               </span>
@@ -96,8 +96,7 @@ export default function Home() {
                 <strong>{bioData.rennove.title}</strong>
                 <small>{bioData.rennove.subtitle}</small>
               </span>
-              <span className={styles.outlineArrow}><ArrowUpRight size={18} /></span>
-            </a>
+            </button>
           </nav>
           <footer className={styles.footer}>
             <span>BELEZA COM CUIDADO. CUIDADO COM VOCÊ.</span>

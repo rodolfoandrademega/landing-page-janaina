@@ -88,11 +88,11 @@
   text-align: left;
   cursor: pointer;
 }
-.links :is(a, button):hover {
+.links :is(a, button):not(:disabled):hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px #45463015;
 }
-.links :is(a, button):active {
+.links :is(a, button):not(:disabled):active {
   transform: scale(.985);
 }
 .links strong {
@@ -408,6 +408,7 @@
   border-radius: 20px 5px 20px 20px;
   background: linear-gradient(115deg, #f0eee2, #e8e5d7);
 }
+.links .rennove:disabled { cursor: default; opacity: 1; }
 .rennoveArt {
   position: relative;
   overflow: hidden;
@@ -424,7 +425,6 @@
 .rennoveCopy .cardEyebrow { font-size: 8px; color: #776d45; letter-spacing: 1.3px; margin-bottom: 8px; }
 .rennoveCopy strong { font-size: 22px; }
 .rennoveCopy small { font-size: 10px; color: #77705b; margin-top: 6px; }
-.rennove .outlineArrow { align-self: center; margin: 0; }
 @media (max-width: 370px) {
   .rennove { gap: 12px; padding: 18px 14px; }
   .rennoveArt { width: 62px; height: 82px; }
