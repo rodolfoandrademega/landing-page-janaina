@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Lora } from "next/font/google";
 import "./globals.css";
+import { SiteEntrance } from "@/components/SiteEntrance";
 
 const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 const serif = Lora({ subsets: ["latin"], variable: "--font-editorial", display: "swap" });
@@ -21,6 +22,7 @@ export default function RootLayout({
         className={`${sans.variable} ${serif.variable} antialiased bg-[#fcfbf9] min-h-screen`}
         suppressHydrationWarning
       >
+        <SiteEntrance />
         {children}
       </body>
     </html>

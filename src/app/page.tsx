@@ -2,15 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { bioData } from "@/data/bioData";
 import styles from "./bio.module.css";
 import { LocationModal } from "@/components/LocationModal";
-import { ProceduresModal } from "@/components/ProceduresModal";
 
 export default function Home() {
   const [locationOpen, setLocationOpen] = useState(false);
-  const [proceduresOpen, setProceduresOpen] = useState(false);
 
   return (
     <main className={styles.page}>
@@ -50,7 +49,7 @@ export default function Home() {
               <span className={styles.roundArrow}><ArrowUpRight size={19} /></span>
             </a>
 
-            <button type="button" className={styles.procedures} onClick={() => setProceduresOpen(true)} aria-haspopup="dialog">
+            <Link href="/procedimentos" className={styles.procedures}>
               <span className={styles.procedurePhoto}>
                 <Image src="/images/janaina-treatment.jpg" alt="" fill sizes="110px" />
               </span>
@@ -60,7 +59,7 @@ export default function Home() {
                 <small>Explore os cuidados disponíveis</small>
               </span>
               <span className={styles.outlineArrow}><ArrowUpRight size={18} /></span>
-            </button>
+            </Link>
 
             <a className={styles.instagram} href={bioData.links[1].url} target="_blank" rel="noopener noreferrer">
               <span className={styles.socialPhoto} aria-hidden="true">
@@ -107,7 +106,6 @@ export default function Home() {
         </div>
       </div>
       <LocationModal open={locationOpen} onClose={() => setLocationOpen(false)} />
-      <ProceduresModal open={proceduresOpen} onClose={() => setProceduresOpen(false)} />
     </main>
   );
 }
